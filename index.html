@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BinexAds | Monetag Ad Center</title>
+  <link rel="canonical" href="https://binexads.vercel.app/">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" sizes="32x32" href="/binexxx.jpg">
+  <link rel="apple-touch-icon" href="/binexxx.jpg">
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="binexxx.jpg" type="image/x-icon">
@@ -18,7 +22,6 @@
   <meta name="google-site-verification" content="YOUR_SEARCH_CONSOLE_VERIFICATION_CODE_HERE" />
 
   <!-- ✅ Google Analytics (GA4) -->
-  <!-- Replace G-XXXXXXXXXX with your Measurement ID -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -41,6 +44,8 @@
   <meta property="og:image" content="https://binexads.vercel.app/binexxx.jpg">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="BinexAds">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -50,8 +55,27 @@
   <meta name="twitter:image" content="https://binexads.vercel.app/binexxx.jpg">
   <meta name="twitter:creator" content="@BinexOfficial">
 
-  <!-- Theme Color (for mobile browsers) -->
+  <!-- Theme Color -->
   <meta name="theme-color" content="#4F46E5" />
+  <meta name="apple-mobile-web-app-title" content="BinexAds">
+  <meta name="application-name" content="BinexAds">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <meta name="google-site-verification" content="hBP6utAUmi7aDUexswW87tEhE1zGbOTVcm-uyPwXaPQ" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "BinexAds",
+      "url": "https://binexads.vercel.app/",
+      "description": "BinexAds helps you monetize your online traffic with smart ad formats powered by Monetag.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Binex",
+        "logo": "https://binexads.vercel.app/binexxx.jpg"
+      }
+    }
+  </script>
 </head>
 
 <body class="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white flex items-center justify-center min-h-screen font-sans px-4">
@@ -76,30 +100,71 @@
     </footer>
   </div>
 
+  <!-- ✅ JavaScript Ad Triggers -->
   <script>
-    // === Replace these placeholders with your actual Monetag ad scripts ===
+    // === Multitag Integration ===
     function showMultiTag() {
-      alert('🎯 Multitag Ad Triggered — insert your Monetag MultiTag script here.');
+      const existing = document.getElementById('monetag-multitag');
+      if (existing) existing.remove();
+
+      const script = document.createElement('script');
+      script.src = "https://fpyf8.com/88/tag.min.js";
+      script.setAttribute("data-zone", "180028");
+      script.async = true;
+      script.dataset.cfasync = "false";
+      script.id = "monetag-multitag";
+      document.body.appendChild(script);
     }
 
+    // === Popunder Integration ===
     function showPopunder() {
-      alert('💥 Popunder Ad Triggered — insert your Monetag Popunder script here.');
+      const existing = document.getElementById('monetag-popunder');
+      if (existing) existing.remove();
+
+      const script = document.createElement('script');
+      script.innerHTML = "(function(s){s.dataset.zone='10084182',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))";
+      script.id = "monetag-popunder";
+      document.body.appendChild(script);
     }
 
+    // === Push Notification Integration ===
     function showPush() {
-      alert('🔔 Push Notification Triggered — insert your Monetag Push Notification script here.');
+      const existing = document.getElementById('monetag-push');
+      if (existing) existing.remove();
+
+      const script = document.createElement('script');
+      script.src = "https://3nbf4.com/act/files/tag.min.js?z=10084207";
+      script.async = true;
+      script.dataset.cfasync = "false";
+      script.id = "monetag-push";
+      document.body.appendChild(script);
     }
 
+    // === In-Page Push Integration ===
     function showInPagePush() {
-      alert('🧭 In-Page Push Triggered — insert your Monetag In-Page Push script here.');
+      const existing = document.getElementById('monetag-inpage');
+      if (existing) existing.remove();
+
+      const script = document.createElement('script');
+      script.innerHTML = "(function(s){s.dataset.zone='10084219',s.src='https://forfrogadiertor.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))";
+      script.id = "monetag-inpage";
+      document.body.appendChild(script);
     }
 
+    // === Interstitial Integration ===
     function showInterstitial() {
-      alert('🧱 Interstitial Ad Triggered — insert your Monetag Interstitial script here.');
+      const existing = document.getElementById('monetag-interstitial');
+      if (existing) existing.remove();
+
+      const script = document.createElement('script');
+      script.innerHTML = "(function(s){s.dataset.zone='10084241',s.src='https://groleegni.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))";
+      script.id = "monetag-interstitial";
+      document.body.appendChild(script);
     }
 
+    // === Direct Link Integration ===
     function openDirectLink() {
-      alert('🔗 Opening Direct Link — replace with your Monetag direct ad link.');
+      window.open("https://otieu.com/4/10084247", "_blank");
     }
   </script>
 </body>
