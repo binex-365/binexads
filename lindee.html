@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BinexAds | Monetag Ad Center</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white flex items-center justify-center min-h-screen font-sans">
+  <div class="text-center space-y-8 p-8 max-w-4xl">
+    <header>
+      <h1 class="text-4xl font-extrabold text-indigo-400 mb-2">BinexAds</h1>
+      <p class="text-gray-400 text-lg">Your Smart Gateway to Online Ad Earnings</p>
+    </header>
+
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+      <button onclick="showMultiTag()" class="bg-indigo-600 hover:bg-indigo-700 p-5 rounded-2xl shadow-lg transition-transform transform hover:scale-105">🎯 Multitag (All in One)</button>
+      <button onclick="showPopunder()" class="bg-pink-600 hover:bg-pink-700 p-5 rounded-2xl shadow-lg transition-transform transform hover:scale-105">💥 Popunder</button>
+      <button onclick="showPush()" class="bg-blue-600 hover:bg-blue-700 p-5 rounded-2xl shadow-lg transition-transform transform hover:scale-105">🔔 Push Notification</button>
+      <button onclick="showInPagePush()" class="bg-green-600 hover:bg-green-700 p-5 rounded-2xl shadow-lg transition-transform transform hover:scale-105">🧭 In-Page Push</button>
+      <button onclick="showInterstitial()" class="bg-yellow-600 hover:bg-yellow-700 p-5 rounded-2xl shadow-lg transition-transform transform hover:scale-105">🧱 Interstitial</button>
+      <button onclick="openDirectLink()" class="bg-purple-600 hover:bg-purple-700 p-5 rounded-2xl shadow-lg transition-transform transform hover:scale-105">🔗 Direct Link</button>
+    </section>
+
+    <footer class="mt-12 border-t border-gray-700 pt-4">
+      <p class="text-gray-400 text-sm">© 2025 BinexAds. Powered by <span class="text-indigo-400 font-semibold">Binex</span> | All rights reserved.</p>
+      <p class="text-gray-500 text-xs mt-1">Monetag integration demo for testing multiple ad formats.</p>
+    </footer>
+  </div>
+
+  <script>
+    // === Replace the placeholders below with your actual Monetag ad scripts ===
+
+    function showMultiTag() {
+      alert('🎯 Multitag Ad Triggered — insert your Monetag MultiTag script here.');
+      // Example:
+      // (function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://monetag.com/tag.js','YOUR_ZONE_ID',document.body);
+    }
+
+    function showPopunder() {
+      alert('💥 Popunder Ad Triggered — insert your Monetag Popunder script here.');
+      // Example:
+      // (function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://monetag.com/tag.js','YOUR_POPUNDER_ZONE',document.body);
+    }
+
+    function showPush() {
+      alert('🔔 Push Notification Triggered — insert your Monetag Push Notification script here.');
+      // Example:
+      // (function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://monetag.com/tag.js','YOUR_PUSH_ZONE',document.body);
+    }
+
+    function showInPagePush() {
+      alert('🧭 In-Page Push Triggered — insert your Monetag In-Page Push script here.');
+      // Example:
+      // (function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://monetag.com/tag.js','YOUR_INPAGE_ZONE',document.body);
+    }
+
+    function showInterstitial() {
+      alert('🧱 Interstitial Ad Triggered — insert your Monetag Interstitial script here.');
+      // Example:
+      // (function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://monetag.com/tag.js','YOUR_INTERSTITIAL_ZONE',document.body);
+    }
+
+    function openDirectLink() {
+      alert('🔗 Opening Direct Link — replace with your Monetag direct ad link.');
+      // Example: window.open('https://your-monetag-direct-link.com', '_blank');
+    }
+  </script>
+</body>
+</html>

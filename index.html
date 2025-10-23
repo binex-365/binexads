@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BinexAds | Monetag Ad Center</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="binexxx.jpg" type="image/x-icon">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Monetag Verification -->
+  <meta name="monetag" content="8e35d268c3c04c5c3caab0ac337965a3">
+
+  <!-- ✅ Google Search Console Verification -->
+  <meta name="google-site-verification" content="YOUR_SEARCH_CONSOLE_VERIFICATION_CODE_HERE" />
+
+  <!-- ✅ Google Analytics (GA4) -->
+  <!-- Replace G-XXXXXXXXXX with your Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="BinexAds | Monetag Ad Center">
+  <meta name="description" content="BinexAds helps you monetize your online traffic with smart ad formats powered by Monetag. Choose from Multitag, Popunder, Push Notifications, and more to start earning easily.">
+  <meta name="keywords" content="BinexAds, Monetag, ad network, popunder ads, push notifications, website monetization, Binex, ad formats, online ads, web traffic earnings">
+  <meta name="author" content="Binex">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://binexads.vercel.app/">
+  <meta property="og:title" content="BinexAds | Monetag Ad Center">
+  <meta property="og:description" content="Your smart gateway to online ad earnings. Try Multitag, Popunder, Push Ads, and more from BinexAds.">
+  <meta property="og:image" content="https://binexads.vercel.app/binexxx.jpg">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="BinexAds">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://binexads.vercel.app/">
+  <meta name="twitter:title" content="BinexAds | Monetag Ad Center">
+  <meta name="twitter:description" content="Your smart gateway to online ad earnings. Try Multitag, Popunder, Push Ads, and more from BinexAds.">
+  <meta name="twitter:image" content="https://binexads.vercel.app/binexxx.jpg">
+  <meta name="twitter:creator" content="@BinexOfficial">
+
+  <!-- Theme Color (for mobile browsers) -->
+  <meta name="theme-color" content="#4F46E5" />
+</head>
+
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white flex items-center justify-center min-h-screen font-sans px-4">
+  <div class="text-center space-y-8 w-full max-w-5xl">
+    <header class="px-4">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-indigo-400 mb-3">BinexAds</h1>
+      <p class="text-gray-400 text-base sm:text-lg">Your Smart Gateway to Online Ad Earnings</p>
+    </header>
+
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mt-10 px-4">
+      <button onclick="showMultiTag()" class="w-full bg-indigo-600 hover:bg-indigo-700 py-5 px-3 rounded-2xl shadow-lg transition-transform transform hover:scale-105 text-sm sm:text-base">🎯 Multitag (All in One)</button>
+      <button onclick="showPopunder()" class="w-full bg-pink-600 hover:bg-pink-700 py-5 px-3 rounded-2xl shadow-lg transition-transform transform hover:scale-105 text-sm sm:text-base">💥 Popunder</button>
+      <button onclick="showPush()" class="w-full bg-blue-600 hover:bg-blue-700 py-5 px-3 rounded-2xl shadow-lg transition-transform transform hover:scale-105 text-sm sm:text-base">🔔 Push Notification</button>
+      <button onclick="showInPagePush()" class="w-full bg-green-600 hover:bg-green-700 py-5 px-3 rounded-2xl shadow-lg transition-transform transform hover:scale-105 text-sm sm:text-base">🧭 In-Page Push</button>
+      <button onclick="showInterstitial()" class="w-full bg-yellow-600 hover:bg-yellow-700 py-5 px-3 rounded-2xl shadow-lg transition-transform transform hover:scale-105 text-sm sm:text-base">🧱 Interstitial</button>
+      <button onclick="openDirectLink()" class="w-full bg-purple-600 hover:bg-purple-700 py-5 px-3 rounded-2xl shadow-lg transition-transform transform hover:scale-105 text-sm sm:text-base">🔗 Direct Link</button>
+    </section>
+
+    <footer class="mt-12 border-t border-gray-700 pt-4 text-center px-4">
+      <p class="text-gray-400 text-sm sm:text-base">© 2025 <span class="text-indigo-400 font-semibold">BinexAds</span>. Powered by <span class="text-indigo-400 font-semibold">Binex</span></p>
+      <p class="text-gray-500 text-xs sm:text-sm mt-1">Monetag integration demo for testing multiple ad formats.</p>
+    </footer>
+  </div>
+
+  <script>
+    // === Replace these placeholders with your actual Monetag ad scripts ===
+    function showMultiTag() {
+      alert('🎯 Multitag Ad Triggered — insert your Monetag MultiTag script here.');
+    }
+
+    function showPopunder() {
+      alert('💥 Popunder Ad Triggered — insert your Monetag Popunder script here.');
+    }
+
+    function showPush() {
+      alert('🔔 Push Notification Triggered — insert your Monetag Push Notification script here.');
+    }
+
+    function showInPagePush() {
+      alert('🧭 In-Page Push Triggered — insert your Monetag In-Page Push script here.');
+    }
+
+    function showInterstitial() {
+      alert('🧱 Interstitial Ad Triggered — insert your Monetag Interstitial script here.');
+    }
+
+    function openDirectLink() {
+      alert('🔗 Opening Direct Link — replace with your Monetag direct ad link.');
+    }
+  </script>
+</body>
+</html>
