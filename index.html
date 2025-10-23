@@ -106,78 +106,71 @@
     </footer>
   </div>
 
-  <!-- ✅ Fixed: Preload + Single-Click Ad Trigger -->
-<script>
-  // Preload all Monetag scripts silently on page load
-  window.addEventListener("DOMContentLoaded", () => {
-    const preloadScripts = [
-      { id: "preload-multitag", src: "https://fpyf8.com/88/tag.min.js", zone: "180028" },
-      { id: "preload-popunder", inline: "(function(s){s.dataset.zone='10084182',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))" },
-      { id: "preload-push", src: "https://3nbf4.com/act/files/tag.min.js?z=10084207" },
-      { id: "preload-inpage", inline: "(function(s){s.dataset.zone='10084219',s.src='https://forfrogadiertor.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))" },
-      { id: "preload-interstitial", inline: "(function(s){s.dataset.zone='10084241',s.src='https://groleegni.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))" },
-    ];
-    preloadScripts.forEach(obj => {
-      const s = document.createElement("script");
-      s.id = obj.id;
-      if (obj.src) {
-        s.src = obj.src;
-        if (obj.zone) s.setAttribute("data-zone", obj.zone);
-      } else if (obj.inline) {
-        s.innerHTML = obj.inline;
-      }
-      s.async = true;
-      s.dataset.cfasync = "false";
-      s.style.display = "none"; // hide
-      document.body.appendChild(s);
-    });
-  });
+  <script>
+  // Helper: safely load ad scripts only after user interaction
+  function loadMonetagScript({ id, src, inner = null }) {
+    // Remove any existing script with same id
+    const existing = document.getElementById(id);
+    if (existing) existing.remove();
 
-  // --- Actual visible click triggers ---
+    const script = document.createElement('script');
+    script.id = id;
+
+    if (inner) {
+      script.innerHTML = inner;
+    } else {
+      script.src = src;
+      script.async = true;
+      script.dataset.cfasync = "false";
+    }
+
+    // Append after a small delay to ensure user click context
+    setTimeout(() => document.body.appendChild(script), 200);
+  }
+
+  // === Multitag (All in One) ===
   function showMultiTag() {
-    triggerAd("monetag-multitag", "https://fpyf8.com/88/tag.min.js", "180028");
+    loadMonetagScript({
+      id: "monetag-multitag",
+      src: "https://fpyf8.com/88/tag.min.js",
+    });
   }
 
+  // === Popunder ===
   function showPopunder() {
-    triggerInline("monetag-popunder", "(function(s){s.dataset.zone='10084182',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))");
+    loadMonetagScript({
+      id: "monetag-popunder",
+      inner: "(function(s){s.dataset.zone='10084182';s.src='https://al5sm.com/tag.min.js';})([document.documentElement,document.body].filter(Boolean).pop().appendChild(document.createElement('script')))"
+    });
   }
 
+  // === Push Notification ===
   function showPush() {
-    triggerAd("monetag-push", "https://3nbf4.com/act/files/tag.min.js?z=10084207");
+    loadMonetagScript({
+      id: "monetag-push",
+      src: "https://3nbf4.com/act/files/tag.min.js?z=10084207",
+    });
   }
 
+  // === In-Page Push ===
   function showInPagePush() {
-    triggerInline("monetag-inpage", "(function(s){s.dataset.zone='10084219',s.src='https://forfrogadiertor.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))");
+    loadMonetagScript({
+      id: "monetag-inpage",
+      inner: "(function(s){s.dataset.zone='10084219';s.src='https://forfrogadiertor.com/tag.min.js';})([document.documentElement,document.body].filter(Boolean).pop().appendChild(document.createElement('script')))"
+    });
   }
 
+  // === Interstitial ===
   function showInterstitial() {
-    triggerInline("monetag-interstitial", "(function(s){s.dataset.zone='10084241',s.src='https://groleegni.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))");
+    loadMonetagScript({
+      id: "monetag-interstitial",
+      inner: "(function(s){s.dataset.zone='10084241';s.src='https://groleegni.net/vignette.min.js';})([document.documentElement,document.body].filter(Boolean).pop().appendChild(document.createElement('script')))"
+    });
   }
 
+  // === Direct Link ===
   function openDirectLink() {
     window.open("https://otieu.com/4/10084247", "_blank");
-  }
-
-  // Helpers
-  function triggerAd(id, src, zone = null) {
-    const existing = document.getElementById(id);
-    if (existing) existing.remove();
-    const script = document.createElement("script");
-    script.id = id;
-    script.src = src;
-    script.async = true;
-    script.dataset.cfasync = "false";
-    if (zone) script.setAttribute("data-zone", zone);
-    document.body.appendChild(script);
-  }
-
-  function triggerInline(id, code) {
-    const existing = document.getElementById(id);
-    if (existing) existing.remove();
-    const script = document.createElement("script");
-    script.id = id;
-    script.innerHTML = code;
-    document.body.appendChild(script);
   }
 </script>
 </body>
